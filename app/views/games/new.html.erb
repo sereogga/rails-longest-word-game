@@ -1,0 +1,17 @@
+<div class="m-5">
+  <% @letters.each do |letter| %>
+    <div class="shadow mx-1 p-3 border border-3 d-inline rounded-3"
+      style="background: rgba(	155, 253, 150,0.7)">
+        <strong>
+          <%= letter.capitalize%>
+        </strong>
+    </div>
+  <% end %>
+</div>
+<div class="ms-5">
+  <form action="/score" method="post" data-turbo="false">
+    <input type="text" name="word" placeholder="What is your word ?">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input class="btn btn-primary" type="submit">
+  </form>
+</div>
